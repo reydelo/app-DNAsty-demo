@@ -30,15 +30,17 @@ export default function AppDnaStacks() {
   ) => {
     const target = event.target as Element;
     const colorClass = target.classList[0];
+
     if (isBlockColor(colorClass)) {
       setHighlightColor(colorClass);
     }
   };
+
   return (
     <div
       onMouseOver={highlightBlocks}
       className={`${robotoFont.className} ${styles.dnaStacks} ${
-        highlightColor && styles[`highlightColor--${highlightColor}`]
+        highlightColor ? styles[`highlightColor--${highlightColor}`] : ""
       }`}
     >
       <div className={styles.dnaStack}>
