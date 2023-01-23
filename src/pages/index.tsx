@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Work_Sans, Roboto } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import BookingToolSvg from "../components/AppDnaStacks/BookingToolSvg";
 import CarSharingSvg from "@/components/AppDnaStacks/CarsharingSvg";
 import SocialPlatformSvg from "@/components/AppDnaStacks/SocialPlatformSvg";
@@ -26,19 +26,15 @@ export default function Home() {
     undefined
   );
 
-  useEffect(() => {
-    const querySelector = "rect"; // `${styles.dnaStack} rect`;
-    const coloredBlocks = document.querySelectorAll(querySelector); // refector with useRef
-
-    coloredBlocks.forEach((el) => {
-      const colorClass = el.classList[0]; // assumes only one class on <rect />!
-
-      if (isBlockColor(colorClass)) {
-        el.addEventListener("mouseover", () => setHighlightColor(colorClass));
-        el.addEventListener("mouseout", () => setHighlightColor(undefined));
-      }
-    });
-  }, []);
+  const highlightBlocks = (
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
+    const target = event.target as Element;
+    const colorClass = target.classList[0];
+    if (isBlockColor(colorClass)) {
+      setHighlightColor(colorClass);
+    }
+  };
 
   return (
     <>
@@ -61,6 +57,7 @@ export default function Home() {
         </section>
 
         <div
+          onMouseOver={highlightBlocks}
           className={`${robotoFont.className} ${styles.dnaStacks} ${
             highlightColor && styles[`highlightColor--${highlightColor}`]
           }`}
@@ -69,17 +66,18 @@ export default function Home() {
             <span className={`color-orange ${styles.coloredLabel}`}>
               User Interface
             </span>
-            <CrmToolSvg />
+            <CrmToolSvg onMouseLeave={() => setHighlightColor(undefined)} />
+
             <span className={styles.stackLabel}>CRM Tool</span>
           </div>
 
           <div className={styles.dnaStack}>
-            <PeopleOsSvg />
+            <PeopleOsSvg onMouseLeave={() => setHighlightColor(undefined)} />
             <span className={styles.stackLabel}>People OS</span>
           </div>
 
           <div className={styles.dnaStack}>
-            <BookingToolSvg />
+            <BookingToolSvg onMouseLeave={() => setHighlightColor(undefined)} />
             <span className={styles.stackLabel}>Booking Tool</span>
             <span className={`color-green ${styles.coloredLabel}`}>
               Infrastructure
@@ -87,7 +85,7 @@ export default function Home() {
           </div>
 
           <div className={styles.dnaStack}>
-            <TelehealthSvg />
+            <TelehealthSvg onMouseLeave={() => setHighlightColor(undefined)} />
             <span className={styles.stackLabel}>Telehealth</span>
           </div>
 
@@ -95,12 +93,16 @@ export default function Home() {
             <span className={`color-blue ${styles.coloredLabel}`}>
               Basic Features
             </span>
-            <FoodDeliverySvg />
+            <FoodDeliverySvg
+              onMouseLeave={() => setHighlightColor(undefined)}
+            />
             <span className={styles.stackLabel}>Food Delivery</span>
           </div>
 
           <div className={styles.dnaStack}>
-            <SocialPlatformSvg />
+            <SocialPlatformSvg
+              onMouseLeave={() => setHighlightColor(undefined)}
+            />
             <span className={styles.stackLabel}>Social Platform</span>
             <span className={`color-violet ${styles.coloredLabel}`}>
               3rd party stuff
@@ -108,7 +110,7 @@ export default function Home() {
           </div>
 
           <div className={styles.dnaStack}>
-            <CarSharingSvg />
+            <CarSharingSvg onMouseLeave={() => setHighlightColor(undefined)} />
             <span className={styles.stackLabel}>Carsharing</span>
           </div>
         </div>
