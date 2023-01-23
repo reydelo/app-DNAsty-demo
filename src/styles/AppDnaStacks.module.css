@@ -21,6 +21,22 @@
     flex-direction: column;
 }
 
+.orange {
+    color: var(--orange);
+}
+
+.violet {
+    color: var(--violet);
+}
+
+.blue {
+    color: var(--blue);
+}
+
+.green {
+    color: var(--green);
+}
+
 .stackLabel {
     color: var(--hit-grey);
     opacity: 1;
@@ -46,10 +62,10 @@
     opacity: 0.8;
 }
 
-.dnaStacks.highlightColor--orange .coloredLabel:global(.color-orange),
-.dnaStacks.highlightColor--violet .coloredLabel:global(.color-violet),
-.dnaStacks.highlightColor--green .coloredLabel:global(.color-green),
-.dnaStacks.highlightColor--blue .coloredLabel:global(.color-blue) {
+.dnaStacks.highlightColor--orange .coloredLabel.orange,
+.dnaStacks.highlightColor--violet .coloredLabel.violet,
+.dnaStacks.highlightColor--green .coloredLabel.green,
+.dnaStacks.highlightColor--blue .coloredLabel.blue {
     opacity: 1;
 }
 
