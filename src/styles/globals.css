@@ -1,11 +1,35 @@
 :root {
   --font-work-sans: 'Work Sans', sans-serif;
-  --blue-zodiac: #1F2B48;
   --ivory: #FFFDF5;
   --lavender-grey: #C9C5D3;
+  --hit-grey: #ACAAC0;
+  
+  --blue-zodiac: #1F2B48;
+
+  --orange: #FFBB56;
+  --violet: #8D65FF;
+  --blue: #2FBDEA;
+  --green: #45E3BE;
+
   --background-color: var(--blue-zodiac);
 
   --max-width: 1100px;
+}
+
+.color-orange {
+  color: var(--orange);
+}
+
+.color-violet {
+  color: var(--violet);
+}
+
+.color-blue {
+  color: var(--blue);
+}
+
+.color-green {
+  color: var(--green);
 }
 
 * {

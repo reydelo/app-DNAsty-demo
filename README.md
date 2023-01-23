@@ -32,8 +32,8 @@ The app is deployed with the [Vercel Platform](https://vercel.com/new?utm_medium
   - [x] Remove boilerplate code
   - [] Change favicon
   - [] Rename github repo and domain to app-dnasty
-- [] Create UI skeleton
-  - [] Text content
+- [x] Create UI skeleton
+  - [x] Text content
   - [x] Typography
   - [x] Color variables
   - [x] Add SVGs

@@ -43,6 +43,19 @@
   padding: 4rem 0;
 }
 
+.dnaStack {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stackLabel {
+  color: var(--hit-grey);
+}
+
 .claim {
   max-width: 1150px;
   display: grid;
