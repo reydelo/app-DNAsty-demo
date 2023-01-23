@@ -39,7 +39,7 @@
   max-width: 1200px;
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: flex-end;
   padding: 4rem 0;
 }
 
@@ -54,6 +54,22 @@
 
 .stackLabel {
   color: var(--hit-grey);
+  opacity: 1;
+  visibility: visible;
+  transition: visibility 0.2s, opacity 0.2s linear; 
+}
+
+.stackLabel.hideStackLabel {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.coloredLabel {
+  display: none; /* FIXME: display causes dna stack position to change */
+}
+
+.coloredLabel.showColoredLabel {
+  display: inline;
 }
 
 .claim {
