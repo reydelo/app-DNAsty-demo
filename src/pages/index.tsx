@@ -1,8 +1,14 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Work_Sans, Roboto } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import { useState } from "react";
+import BookingToolSvg from "../components/AppDnaStacks/BookingToolSvg";
+import CarSharingSvg from "@/components/AppDnaStacks/CarsharingSvg";
+import SocialPlatformSvg from "@/components/AppDnaStacks/SocialPlatformSvg";
+import CrmToolSvg from "@/components/AppDnaStacks/CrmToolSvg";
+import PeopleOsSvg from "@/components/AppDnaStacks/PeopleOsSvg";
+import TelehealthSvg from "@/components/AppDnaStacks/TelehealthSvg";
+import FoodDeliverySvg from "@/components/AppDnaStacks/FoodDeliverySvg";
 
 const workSansFont = Work_Sans({ subsets: ["latin"] });
 const robotoFont = Roboto({ weight: "400", subsets: ["latin"] });
@@ -41,11 +47,7 @@ export default function Home() {
             >
               User Interface
             </span>
-            <Image
-              src="/dna-stacks/crm-tool.svg"
-              alt="CRM Tool technical stack"
-              width={120}
-              height={264}
+            <CrmToolSvg
               onMouseEnter={toggleStackLabelVisibility}
               onMouseLeave={toggleStackLabelVisibility}
             />
@@ -59,12 +61,7 @@ export default function Home() {
           </div>
 
           <div className={styles.dnaStack}>
-            <Image
-              src="/dna-stacks/people-os.svg"
-              alt="People OS technical stack"
-              width={120}
-              height={356}
-            />
+            <PeopleOsSvg />
             <span
               className={`${styles.stackLabel} ${
                 !stackLabelVisible && styles.hideStackLabel
@@ -75,12 +72,7 @@ export default function Home() {
           </div>
 
           <div className={styles.dnaStack}>
-            <Image
-              src="/dna-stacks/booking-tool.svg"
-              alt="Booking Tool technical stack"
-              width={120}
-              height={272}
-            />
+            <BookingToolSvg />
             <span
               className={`${styles.stackLabel} ${
                 !stackLabelVisible && styles.hideStackLabel
@@ -98,12 +90,7 @@ export default function Home() {
           </div>
 
           <div className={styles.dnaStack}>
-            <Image
-              src="/dna-stacks/telehealth.svg"
-              alt="Telehealth technical stack"
-              width={120}
-              height={352}
-            />
+            <TelehealthSvg />
             <span
               className={`${styles.stackLabel} ${
                 !stackLabelVisible && styles.hideStackLabel
@@ -121,12 +108,7 @@ export default function Home() {
             >
               Basic Features
             </span>
-            <Image
-              src="/dna-stacks/food-delivery.svg"
-              alt="Food Delivery technical stack"
-              width={120}
-              height={252}
-            />
+            <FoodDeliverySvg />
             <span
               className={`${styles.stackLabel} ${
                 !stackLabelVisible && styles.hideStackLabel
@@ -137,12 +119,7 @@ export default function Home() {
           </div>
 
           <div className={styles.dnaStack}>
-            <Image
-              src="/dna-stacks/social-platform.svg"
-              alt="Social Platform technical stack"
-              width={120}
-              height={268}
-            />
+            <SocialPlatformSvg />
             <span
               className={`${styles.stackLabel} ${
                 !stackLabelVisible && styles.hideStackLabel
@@ -160,12 +137,7 @@ export default function Home() {
           </div>
 
           <div className={styles.dnaStack}>
-            <Image
-              src="/dna-stacks/carsharing.svg"
-              alt="Carsharing technical stack"
-              width={120}
-              height={276}
-            />
+            <CarSharingSvg />
             <span
               className={`${styles.stackLabel} ${
                 !stackLabelVisible && styles.hideStackLabel
