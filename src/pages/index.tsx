@@ -10,13 +10,15 @@ import PeopleOsSvg from "@/components/AppDnaStacks/PeopleOsSvg";
 import TelehealthSvg from "@/components/AppDnaStacks/TelehealthSvg";
 import FoodDeliverySvg from "@/components/AppDnaStacks/FoodDeliverySvg";
 
+export type BlockColor = "orange" | "blue" | "violet" | "green";
+
 const workSansFont = Work_Sans({ subsets: ["latin"] });
 const robotoFont = Roboto({ weight: "400", subsets: ["latin"] });
 
 export default function Home() {
-  const [stackLabelVisible, setStackLabelVisible] = useState(true);
-  const toggleStackLabelVisibility = () =>
-    setStackLabelVisible(!stackLabelVisible);
+  const [highlightColor, setHighlightColor] = useState<BlockColor | undefined>(
+    undefined
+  );
 
   return (
     <>
@@ -38,62 +40,40 @@ export default function Home() {
           </h3>
         </section>
 
-        <div className={`${robotoFont.className} ${styles.dnaStacks}`}>
+        <div
+          className={`${robotoFont.className} ${styles.dnaStacks} ${
+            highlightColor && styles[`highlightColor--${highlightColor}`]
+          }`}
+        >
           <div className={styles.dnaStack}>
-            <span
-              className={`color-orange ${styles.coloredLabel} ${
-                !stackLabelVisible && styles.showColoredLabel
-              }`}
-            >
+            <span className={`color-orange ${styles.coloredLabel}`}>
               User Interface
             </span>
-            <CrmToolSvg
-              onMouseEnter={toggleStackLabelVisibility}
-              onMouseLeave={toggleStackLabelVisibility}
-            />
-            <span
-              className={`${styles.stackLabel} ${
-                !stackLabelVisible && styles.hideStackLabel
-              }`}
-            >
-              CRM Tool
-            </span>
+            <CrmToolSvg />
+            <span className={styles.stackLabel}>CRM Tool</span>
           </div>
 
           <div className={styles.dnaStack}>
             <PeopleOsSvg />
-            <span
-              className={`${styles.stackLabel} ${
-                !stackLabelVisible && styles.hideStackLabel
-              }`}
-            >
-              People OS
-            </span>
+            <span className={styles.stackLabel}>People OS</span>
           </div>
 
           <div className={styles.dnaStack}>
             <BookingToolSvg />
-            <span
-              className={`${styles.stackLabel} ${
-                !stackLabelVisible && styles.hideStackLabel
-              }`}
-            >
-              Booking Tool
-            </span>
-            <span
-              className={`color-green ${styles.coloredLabel} ${
-                !stackLabelVisible && styles.showColoredLabel
-              }`}
-            >
+            <span className={styles.stackLabel}>Booking Tool</span>
+            <span className={`color-green ${styles.coloredLabel}`}>
               Infrastructure
             </span>
           </div>
 
           <div className={styles.dnaStack}>
-            <TelehealthSvg />
+            <TelehealthSvg
+              onMouseEnter={() => setHighlightColor("blue")}
+              onMouseLeave={() => setHighlightColor(undefined)}
+            />
             <span
               className={`${styles.stackLabel} ${
-                !stackLabelVisible && styles.hideStackLabel
+                highlightColor && styles.hideStackLabel
               }`}
             >
               Telehealth
@@ -101,50 +81,33 @@ export default function Home() {
           </div>
 
           <div className={styles.dnaStack}>
-            <span
-              className={`color-blue ${styles.coloredLabel} ${
-                !stackLabelVisible && styles.showColoredLabel
-              }`}
-            >
+            <span className={`color-blue ${styles.coloredLabel}`}>
               Basic Features
             </span>
-            <FoodDeliverySvg />
-            <span
-              className={`${styles.stackLabel} ${
-                !stackLabelVisible && styles.hideStackLabel
-              }`}
-            >
-              Food Delivery
-            </span>
+            <FoodDeliverySvg
+              onMouseEnter={() => setHighlightColor("violet")}
+              onMouseLeave={() => setHighlightColor(undefined)}
+            />
+            <span className={styles.stackLabel}>Food Delivery</span>
           </div>
 
           <div className={styles.dnaStack}>
-            <SocialPlatformSvg />
-            <span
-              className={`${styles.stackLabel} ${
-                !stackLabelVisible && styles.hideStackLabel
-              }`}
-            >
-              Social Platform
-            </span>
-            <span
-              className={`color-violet ${styles.coloredLabel} ${
-                !stackLabelVisible && styles.showColoredLabel
-              }`}
-            >
+            <SocialPlatformSvg
+              onMouseEnter={() => setHighlightColor("orange")}
+              onMouseLeave={() => setHighlightColor(undefined)}
+            />
+            <span className={styles.stackLabel}>Social Platform</span>
+            <span className={`color-violet ${styles.coloredLabel}`}>
               3rd party stuff
             </span>
           </div>
 
           <div className={styles.dnaStack}>
-            <CarSharingSvg />
-            <span
-              className={`${styles.stackLabel} ${
-                !stackLabelVisible && styles.hideStackLabel
-              }`}
-            >
-              Carsharing
-            </span>
+            <CarSharingSvg
+              onMouseEnter={() => setHighlightColor("green")}
+              onMouseLeave={() => setHighlightColor(undefined)}
+            />
+            <span className={styles.stackLabel}>Carsharing</span>
           </div>
         </div>
 

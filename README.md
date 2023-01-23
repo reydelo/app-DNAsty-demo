@@ -40,9 +40,9 @@ The app is deployed with the [Vercel Platform](https://vercel.com/new?utm_medium
   - [x] Non-optimized layout
 - [] Hover state interaction
   - [] When hoving a block, highlight all blocks of the same color:
-  - [] reduce opacity of all blocks of a different cololr
-  - [] Fade out stack name labels
-  - [] Display label that describes the colored blocks
+  - [x] reduce opacity of all blocks of a different cololr
+  - [x] Fade out stack name labels
+  - [x] Display label that describes the colored blocks
 - [] Scroll-into animation
   - [] layout
     - [] On intial render, show title/subtile in 75% of available screen
