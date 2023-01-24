@@ -19,7 +19,7 @@
 }
 
 .offset svg {
-  transition: transform .5s linear;
+  transition: transform .1s linear;
 }
 
 .offset--4 svg {

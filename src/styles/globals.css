@@ -31,8 +31,12 @@ body {
   color: var(--lavender-grey);
 }
 
-body:first-child {
-  min-height: 100vh;
+main {
+  height: 100vh;
+  overflow: auto;
+}
+
+main>* {
   max-width: var(--max-width);
   margin: 0 auto;
 }
