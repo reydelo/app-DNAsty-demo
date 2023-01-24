@@ -5,17 +5,6 @@
   align-items: flex-end;
 }
 
-.coloredLabel {
-  padding: 1.25rem 0;
-  opacity: 0;
-  transition: opacity 0.2s linear;
-}
-
-.bottomLabel {
-  position: absolute;
-  bottom: 0;
-}
-
 .dnaStack {
   font-weight: 400;
   font-size: 18px;
@@ -29,21 +18,17 @@
   transition: transform .1s linear;
 }
 
-.offset--4 svg {
-  transform: translate(0, 4rem);
+.dnaLabel {
+  padding: 1.25rem 0;
+  opacity: 0;
+  transition: opacity 0.2s linear;
 }
 
-.offset--5 svg {
-  transform: translate(0, 5rem);
+.dnaLabel.bottom {
+  position: absolute;
+  bottom: 0;
 }
 
-.offset--11 svg {
-  transform: translate(0, 11rem);
-}
-
-.offset--12 svg {
-  transform: translate(0, 12rem);
-}
 
 .orange {
   color: var(--orange);
@@ -87,10 +72,10 @@
   opacity: 0.8;
 }
 
-.dnaStacks.highlightColor--orange .coloredLabel.orange,
-.dnaStacks.highlightColor--violet .coloredLabel.violet,
-.dnaStacks.highlightColor--green .coloredLabel.green,
-.dnaStacks.highlightColor--blue .coloredLabel.blue {
+.dnaStacks.highlightColor--orange .dnaLabel.orange,
+.dnaStacks.highlightColor--violet .dnaLabel.violet,
+.dnaStacks.highlightColor--green .dnaLabel.green,
+.dnaStacks.highlightColor--blue .dnaLabel.blue {
   opacity: 1;
 }
 

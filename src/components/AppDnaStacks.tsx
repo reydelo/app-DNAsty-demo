@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import classNames from "classnames";
+import { appStacks, dnaLabels, DnaLabel } from "./AppDnaStacks/data";
+
 import styles from "@/styles/AppDnaStacks.module.css";
-import BookingToolSvg from "../components/AppDnaStacks/BookingToolSvg";
-import CarSharingSvg from "@/components/AppDnaStacks/CarsharingSvg";
-import SocialPlatformSvg from "@/components/AppDnaStacks/SocialPlatformSvg";
-import CrmToolSvg from "@/components/AppDnaStacks/CrmToolSvg";
-import PeopleOsSvg from "@/components/AppDnaStacks/PeopleOsSvg";
-import TelehealthSvg from "@/components/AppDnaStacks/TelehealthSvg";
-import FoodDeliverySvg from "@/components/AppDnaStacks/FoodDeliverySvg";
 
 import { Roboto } from "@next/font/google";
 
@@ -15,7 +10,7 @@ const robotoFont = Roboto({ weight: "400", subsets: ["latin"] });
 
 const blockColors = ["orange", "blue", "violet", "green"] as const;
 type BlockColorTuple = typeof blockColors;
-type BlockColor = BlockColorTuple[number];
+export type BlockColor = BlockColorTuple[number];
 
 function isBlockColor(value: string): value is BlockColor {
   return blockColors.includes(value as BlockColor);
@@ -43,6 +38,14 @@ export default function AppDnaStacks({ scrollPercentage }: AppDnaStacksProps) {
 
   const scrollAsDecimal = (100 - scrollPercentage) / 100;
 
+  const renderDnaLabel = ({ label, color, position }: DnaLabel) => (
+    <span
+      className={classNames(styles[color], styles.dnaLabel, styles[position])}
+    >
+      {label}
+    </span>
+  );
+
   return (
     <div
       onMouseOver={highlightBlocks}
@@ -50,109 +53,23 @@ export default function AppDnaStacks({ scrollPercentage }: AppDnaStacksProps) {
         [`${styles[`highlightColor--${highlightColor}`]}`]: highlightColor,
       })}
     >
-      <div
-        className={classNames(
-          styles.dnaStack,
-          styles.offset,
-          styles[`offset--4`]
-        )}
-      >
-        <span className={classNames(styles.orange, styles.coloredLabel)}>
-          User Interface
-        </span>
-        <CrmToolSvg
-          onMouseLeave={() => setHighlightColor(undefined)}
-          style={{
-            transform: `translate(0, calc(4rem * ${scrollAsDecimal}))`,
-          }}
-        />
-
-        <span className={styles.stackLabel}>CRM Tool</span>
-      </div>
-
-      <div className={styles.dnaStack}>
-        <PeopleOsSvg onMouseLeave={() => setHighlightColor(undefined)} />
-        <span className={styles.stackLabel}>People OS</span>
-      </div>
-
-      <div
-        className={classNames(
-          styles.dnaStack,
-          styles.offset,
-          styles[`offset--11`]
-        )}
-      >
-        <span
-          className={classNames(
-            styles.green,
-            styles.coloredLabel,
-            styles.bottomLabel
-          )}
+      {appStacks.map(({ stackLabel, offset, SvgComponent }, index) => (
+        <div
+          key={stackLabel}
+          className={classNames(styles.dnaStack, {
+            [styles.offset]: offset,
+          })}
         >
-          Infrastructure
-        </span>
-        <BookingToolSvg
-          onMouseLeave={() => setHighlightColor(undefined)}
-          style={{
-            transform: `translate(0, calc(11rem * ${scrollAsDecimal}))`,
-          }}
-        />
-        <span className={styles.stackLabel}>Booking Tool</span>
-      </div>
-
-      <div
-        className={classNames(
-          styles.dnaStack,
-          styles.offset,
-          styles[`offset--5`]
-        )}
-      >
-        <TelehealthSvg
-          onMouseLeave={() => setHighlightColor(undefined)}
-          style={{
-            transform: `translate(0, calc(5rem * ${scrollAsDecimal}))`,
-          }}
-        />
-        <span className={styles.stackLabel}>Telehealth</span>
-      </div>
-
-      <div className={styles.dnaStack}>
-        <span className={classNames(styles.blue, styles.coloredLabel)}>
-          Basic Features
-        </span>
-        <FoodDeliverySvg onMouseLeave={() => setHighlightColor(undefined)} />
-        <span className={styles.stackLabel}>Food Delivery</span>
-      </div>
-
-      <div
-        className={classNames(
-          styles.dnaStack,
-          styles.offset,
-          styles[`offset--12`]
-        )}
-      >
-        <span
-          className={classNames(
-            styles.violet,
-            styles.coloredLabel,
-            styles.bottomLabel
-          )}
-        >
-          3rd party stuff
-        </span>
-        <SocialPlatformSvg
-          onMouseLeave={() => setHighlightColor(undefined)}
-          style={{
-            transform: `translate(0, calc(12rem * ${scrollAsDecimal}))`,
-          }}
-        />
-        <span className={styles.stackLabel}>Social Platform</span>
-      </div>
-
-      <div className={styles.dnaStack}>
-        <CarSharingSvg onMouseLeave={() => setHighlightColor(undefined)} />
-        <span className={styles.stackLabel}>Carsharing</span>
-      </div>
+          {dnaLabels[index] && renderDnaLabel(dnaLabels[index])}
+          <SvgComponent
+            onMouseLeave={() => setHighlightColor(undefined)}
+            style={{
+              transform: `translate(0, calc(${offset}rem * ${scrollAsDecimal}))`,
+            }}
+          />
+          <span className={styles.stackLabel}>{stackLabel}</span>
+        </div>
+      ))}
     </div>
   );
 }
