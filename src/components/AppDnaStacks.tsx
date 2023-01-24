@@ -82,6 +82,15 @@ export default function AppDnaStacks({ scrollPercentage }: AppDnaStacksProps) {
           styles[`offset--11`]
         )}
       >
+        <span
+          className={classNames(
+            styles.green,
+            styles.coloredLabel,
+            styles.bottomLabel
+          )}
+        >
+          Infrastructure
+        </span>
         <BookingToolSvg
           onMouseLeave={() => setHighlightColor(undefined)}
           style={{
@@ -89,9 +98,6 @@ export default function AppDnaStacks({ scrollPercentage }: AppDnaStacksProps) {
           }}
         />
         <span className={styles.stackLabel}>Booking Tool</span>
-        <span className={classNames(styles.green, styles.coloredLabel)}>
-          Infrastructure
-        </span>
       </div>
 
       <div
@@ -125,6 +131,15 @@ export default function AppDnaStacks({ scrollPercentage }: AppDnaStacksProps) {
           styles[`offset--12`]
         )}
       >
+        <span
+          className={classNames(
+            styles.violet,
+            styles.coloredLabel,
+            styles.bottomLabel
+          )}
+        >
+          3rd party stuff
+        </span>
         <SocialPlatformSvg
           onMouseLeave={() => setHighlightColor(undefined)}
           style={{
@@ -132,9 +147,6 @@ export default function AppDnaStacks({ scrollPercentage }: AppDnaStacksProps) {
           }}
         />
         <span className={styles.stackLabel}>Social Platform</span>
-        <span className={classNames(styles.violet, styles.coloredLabel)}>
-          3rd party stuff
-        </span>
       </div>
 
       <div className={styles.dnaStack}>
