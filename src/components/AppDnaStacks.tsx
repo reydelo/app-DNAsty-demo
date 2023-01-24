@@ -44,7 +44,13 @@ export default function AppDnaStacks() {
         [`${styles[`highlightColor--${highlightColor}`]}`]: highlightColor,
       })}
     >
-      <div className={styles.dnaStack}>
+      <div
+        className={classNames(
+          styles.dnaStack,
+          styles.offset,
+          styles[`offset--4`]
+        )}
+      >
         <span className={classNames(styles.orange, styles.coloredLabel)}>
           User Interface
         </span>
@@ -58,7 +64,13 @@ export default function AppDnaStacks() {
         <span className={styles.stackLabel}>People OS</span>
       </div>
 
-      <div className={styles.dnaStack}>
+      <div
+        className={classNames(
+          styles.dnaStack,
+          styles.offset,
+          styles[`offset--11`]
+        )}
+      >
         <BookingToolSvg onMouseLeave={() => setHighlightColor(undefined)} />
         <span className={styles.stackLabel}>Booking Tool</span>
         <span className={classNames(styles.green, styles.coloredLabel)}>
@@ -66,7 +78,13 @@ export default function AppDnaStacks() {
         </span>
       </div>
 
-      <div className={styles.dnaStack}>
+      <div
+        className={classNames(
+          styles.dnaStack,
+          styles.offset,
+          styles[`offset--5`]
+        )}
+      >
         <TelehealthSvg onMouseLeave={() => setHighlightColor(undefined)} />
         <span className={styles.stackLabel}>Telehealth</span>
       </div>
@@ -79,7 +97,13 @@ export default function AppDnaStacks() {
         <span className={styles.stackLabel}>Food Delivery</span>
       </div>
 
-      <div className={styles.dnaStack}>
+      <div
+        className={classNames(
+          styles.dnaStack,
+          styles.offset,
+          styles[`offset--12`]
+        )}
+      >
         <SocialPlatformSvg onMouseLeave={() => setHighlightColor(undefined)} />
         <span className={styles.stackLabel}>Social Platform</span>
         <span className={classNames(styles.violet, styles.coloredLabel)}>
