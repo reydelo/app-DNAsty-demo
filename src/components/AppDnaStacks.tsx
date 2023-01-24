@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import classNames from "classnames";
 import styles from "@/styles/AppDnaStacks.module.css";
 import BookingToolSvg from "../components/AppDnaStacks/BookingToolSvg";
 import CarSharingSvg from "@/components/AppDnaStacks/CarsharingSvg";
@@ -39,12 +40,12 @@ export default function AppDnaStacks() {
   return (
     <div
       onMouseOver={highlightBlocks}
-      className={`${robotoFont.className} ${styles.dnaStacks} ${
-        highlightColor ? styles[`highlightColor--${highlightColor}`] : ""
-      }`}
+      className={classNames(robotoFont.className, styles.dnaStacks, {
+        [`${styles[`highlightColor--${highlightColor}`]}`]: highlightColor,
+      })}
     >
       <div className={styles.dnaStack}>
-        <span className={`${styles.orange} ${styles.coloredLabel}`}>
+        <span className={classNames(styles.orange, styles.coloredLabel)}>
           User Interface
         </span>
         <CrmToolSvg onMouseLeave={() => setHighlightColor(undefined)} />
@@ -60,7 +61,7 @@ export default function AppDnaStacks() {
       <div className={styles.dnaStack}>
         <BookingToolSvg onMouseLeave={() => setHighlightColor(undefined)} />
         <span className={styles.stackLabel}>Booking Tool</span>
-        <span className={`${styles.green} ${styles.coloredLabel}`}>
+        <span className={classNames(styles.green, styles.coloredLabel)}>
           Infrastructure
         </span>
       </div>
@@ -71,7 +72,7 @@ export default function AppDnaStacks() {
       </div>
 
       <div className={styles.dnaStack}>
-        <span className={`${styles.blue} ${styles.coloredLabel}`}>
+        <span className={classNames(styles.blue, styles.coloredLabel)}>
           Basic Features
         </span>
         <FoodDeliverySvg onMouseLeave={() => setHighlightColor(undefined)} />
@@ -81,7 +82,7 @@ export default function AppDnaStacks() {
       <div className={styles.dnaStack}>
         <SocialPlatformSvg onMouseLeave={() => setHighlightColor(undefined)} />
         <span className={styles.stackLabel}>Social Platform</span>
-        <span className={`${styles.violet} ${styles.coloredLabel}`}>
+        <span className={classNames(styles.violet, styles.coloredLabel)}>
           3rd party stuff
         </span>
       </div>
