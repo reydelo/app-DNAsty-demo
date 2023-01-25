@@ -13,10 +13,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Build your App DNAsty</title>
+        <title>Get Started - App DNAsty</title>
         <meta
           name="description"
-          content="Don’t reinvent the wheel every time you build a new app"
+          content="Plug-N-Deploy feature suite to build your app DNAsty"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />

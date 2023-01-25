@@ -31,7 +31,7 @@ The app is deployed with the [Vercel Platform](https://vercel.com/new?utm_medium
 - [x] Create new Next.js App
   - [x] Remove boilerplate code
   - [] Change favicon
-  - [] Rename github repo and domain to app-dnasty
+  - [x] Rename github repo and domain to app-dnasty
 - [x] Create UI skeleton
   - [x] Text content
   - [x] Typography
@@ -44,14 +44,14 @@ The app is deployed with the [Vercel Platform](https://vercel.com/new?utm_medium
   - [x] Fade out stack name labels
   - [x] Display label that describes the colored blocks
   - [x] Positioning of color labels in bottom row
-- [] Scroll-into animation
-  - [] layout
+- [x] Scroll-into animation
+  - [x] layout
     - [x] On intial render, show title/subtile in 75% of available screen
     - [x] Show tops of DNA stacks at the bottom, as a teaser
       - [x] each stack should have a unique starting position
       - [x] stack label is not shown
   - [x] On scroll, the stacks move to their final position which includes reveals the stack label
-    - [-] Shortcut: use a library like Motion or GSAP
+    - [] ~Shortcut: use a library like Motion or GSAP~
     - [] JS-only approach with `requestAnimationFrame`
     - [] Animation should be smooth and ideally run at 60FPS
     - [x] Show stack label as each individual stack arrives at final position
