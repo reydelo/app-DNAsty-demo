@@ -34,7 +34,7 @@ The app is deployed with the [Vercel Platform](https://vercel.com/new?utm_medium
 
 - [x] Create new Next.js App
   - [x] Remove boilerplate code
-  - [] Change favicon
+  - [x] Change favicon
   - [x] Rename github repo and domain to app-dnasty
 - [x] Create UI skeleton
   - [x] Text content
