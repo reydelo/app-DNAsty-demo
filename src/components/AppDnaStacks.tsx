@@ -67,7 +67,13 @@ export default function AppDnaStacks({ scrollPercentage }: AppDnaStacksProps) {
               transform: `translate(0, calc(${offset}rem * ${scrollAsDecimal}))`,
             }}
           />
-          <span className={styles.stackLabel}>{stackLabel}</span>
+          <span
+            className={classNames(styles.stackLabel, {
+              [styles.hideLabel]: offset && offset * scrollAsDecimal > 1,
+            })}
+          >
+            {stackLabel}
+          </span>
         </div>
       ))}
     </div>

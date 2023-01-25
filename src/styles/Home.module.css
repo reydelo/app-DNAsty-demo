@@ -9,6 +9,7 @@
 .hero h1 {
   max-width: 850px;
 
+  margin-top: 8rem;
   color: var(--ivory);
   font-weight: 600;
   font-size: 72px;
