@@ -1,5 +1,9 @@
 # App DNAsty!
 
+[https://app-dnasty.vercel.app/](https://app-dnasty.vercel.app/)
+
+A demo of a landing page hero with a scrolling animation and hover state animation.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -18,7 +22,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## Deploy on Vercel
 
-Push changes to main to deploy.
+Every commit pushed to the main branch will trigger a Production Deployment.
 
 The app is deployed with the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js).
 
