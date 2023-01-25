@@ -5,7 +5,7 @@ import CrmToolSvg from "@/components/AppDnaStacks/CrmToolSvg";
 import PeopleOsSvg from "@/components/AppDnaStacks/PeopleOsSvg";
 import TelehealthSvg from "@/components/AppDnaStacks/TelehealthSvg";
 import FoodDeliverySvg from "@/components/AppDnaStacks/FoodDeliverySvg";
-import { BlockColor } from "../AppDnaStacks";
+import { BlockColor } from "./AppDnaStacks";
 
 type DnaLabelIndex = number;
 export type DnaLabel = {

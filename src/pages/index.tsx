@@ -2,7 +2,7 @@ import Head from "next/head";
 import React from "react";
 import { Work_Sans } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
-import AppDnaStacks from "@/components/AppDnaStacks";
+import AppDnaStacks from "@/components/AppDnaStacks/AppDnaStacks";
 import useScrollPercentage from "@/hooks/useScrollPercentage";
 
 const workSansFont = Work_Sans({ subsets: ["latin"] });

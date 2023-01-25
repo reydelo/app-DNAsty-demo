@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import classNames from "classnames";
-import { appStacks, dnaLabels, DnaLabel } from "./AppDnaStacks/data";
+import { appStacks, dnaLabels, DnaLabel } from "./data";
 
 import styles from "@/styles/AppDnaStacks.module.css";
 
@@ -63,9 +63,13 @@ export default function AppDnaStacks({ scrollPercentage }: AppDnaStacksProps) {
           {dnaLabels[index] && renderDnaLabel(dnaLabels[index])}
           <SvgComponent
             onMouseLeave={() => setHighlightColor(undefined)}
-            style={{
-              transform: `translate(0, calc(${offset}rem * ${scrollAsDecimal}))`,
-            }}
+            style={
+              offset
+                ? {
+                    transform: `translate(0, calc(${offset}rem * ${scrollAsDecimal}))`,
+                  }
+                : {}
+            }
           />
           <span
             className={classNames(styles.stackLabel, {
