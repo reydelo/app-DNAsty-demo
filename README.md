@@ -43,18 +43,18 @@ The app is deployed with the [Vercel Platform](https://vercel.com/new?utm_medium
   - [x] reduce opacity of all blocks of a different cololr
   - [x] Fade out stack name labels
   - [x] Display label that describes the colored blocks
-  - [ ] Positioning of color labels in bottom row
+  - [x] Positioning of color labels in bottom row
 - [] Scroll-into animation
   - [] layout
-    - [] On intial render, show title/subtile in 75% of available screen
-    - [] Show tops of DNA stacks at the bottom, as a teaser
-      - [] each stack should have a unique starting position
-      - [] stack label is not shown
-  - [] On scroll, the stacks move to their final position which includes reveals the stack label
-    - [] Shortcut: use a library like Motion or GSAP
+    - [x] On intial render, show title/subtile in 75% of available screen
+    - [x] Show tops of DNA stacks at the bottom, as a teaser
+      - [x] each stack should have a unique starting position
+      - [x] stack label is not shown
+  - [x] On scroll, the stacks move to their final position which includes reveals the stack label
+    - [-] Shortcut: use a library like Motion or GSAP
     - [] JS-only approach with `requestAnimationFrame`
     - [] Animation should be smooth and ideally run at 60FPS
-    - [] Show stack label as each individual stack arrives at final position
+    - [x] Show stack label as each individual stack arrives at final position
 
 ## After base requirements are finished:
 
@@ -66,7 +66,7 @@ The app is deployed with the [Vercel Platform](https://vercel.com/new?utm_medium
   - [] working with an 8px spacing system
   - [] variables for colors
   - [] avoiding absolute values
-  - [] abstracting data from markup
+  - [x] abstracting data from markup
 
 ## Nice to haves:
 
