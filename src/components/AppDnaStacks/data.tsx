@@ -70,7 +70,7 @@ export const appStacks: AppStackDisplayProperties[] = [
   {
     stackLabel: "Social Platform",
     SvgComponent: SocialPlatformSvg,
-    offset: 12,
+    offset: 10,
   },
   {
     stackLabel: "Carsharing",
